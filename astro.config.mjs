@@ -37,6 +37,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Session Documentation',
+					collapsed: true,
 					items: [
 						{ label: 'Connect to Data', link: 'https://help.tableau.com/current/prep/en-us/prep_connect.htm', attrs: { target: '_blank' } },
 						{ label: 'Clean and Shape Data', link: 'https://help.tableau.com/current/prep/en-us/prep_clean.htm', attrs: { target: '_blank' } },
@@ -50,6 +51,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Additional Docs',
+					collapsed: true,
 					items: [
 						{ label: 'Use Custom SQL', link: 'https://help.tableau.com/current/prep/en-us/prep_connect.htm#use-custom-sql-to-connect-to-data', attrs: { target: '_blank' } },
 						{ label: 'Using Custom Connectors', link: 'https://help.tableau.com/current/prep/en-us/prep_connect.htm#custom-connectors', attrs: { target: '_blank' } },
