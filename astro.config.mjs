@@ -13,6 +13,12 @@ export default defineConfig({
 				src: './src/assets/tableau-prep-logo.svg',
 				replacesTitle: false,
 			},
+			head: [
+				{
+					tag: 'script',
+					content: `if (!localStorage.getItem('starlight-theme')) { localStorage.setItem('starlight-theme', 'dark'); }`,
+				},
+			],
 			customCss: ['./src/styles/custom.css'],
 			sidebar: [
 				{ label: 'Home', slug: '' },
