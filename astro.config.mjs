@@ -22,6 +22,7 @@ export default defineConfig({
 			customCss: ['./src/styles/custom.css'],
 			sidebar: [
 				{ label: 'Home', slug: '' },
+				{ label: 'Downloads', slug: 'downloads' },
 				{
 					label: 'Lab Instructions',
 					items: [
@@ -34,7 +35,6 @@ export default defineConfig({
 						{ label: 'Extra Credit: Tableau Desktop', slug: 'steps/extra-credit' },
 					],
 				},
-			{ label: 'Downloads', slug: 'downloads' },
 				{
 					label: 'Session Documentation',
 					items: [
