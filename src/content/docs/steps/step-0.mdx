@@ -1,0 +1,72 @@
+---
+title: "Step 0: Preliminaries"
+description: Set up the pre-requisites to building our flow.
+sidebar:
+  order: 0
+---
+
+import { Aside, Steps, Code } from '@astrojs/starlight/components';
+
+In this section, we will be setting up the pre-requisites to building our flow.
+
+<Aside type="caution" title="Lab Login">
+  Login to the Lab with this password: **Pa$$w0rd**
+</Aside>
+
+## Register & Connect
+
+<Steps>
+
+1. **Register via the HOT portal** (provision your Tableau Cloud license)
+   - Use this link: [https://hot.demo.tableau.com/register/1728](https://hot.demo.tableau.com/register/1728)
+   - Check your email for the Tableau Cloud password setup link
+   - Set your password and login with your credentials
+
+2. **Launch TabPy Server**
+   - Navigate to the **Lab Files** folder on the desktop of the VM
+   - Double-click the `start_tabpy` .bat file and select **Run**
+   - Type `y` and hit enter to login — **do not close this window!**
+
+   {/* ![TabPy Start](/TC26/images/1.png) */}
+   {/* ![TabPy Running](/TC26/images/2.png) */}
+
+   <Aside type="tip" title="Troubleshooting TabPy">
+     If you encounter any issues, open the command prompt by typing `cmd` in the Windows search bar. Then copy-paste the following into the console and hit Enter:
+
+     ```cmd
+     cd "C:\Users\LabUser\Desktop\Lab Files"
+     "C:\Users\LabUser\Desktop\Lab Files\tabpy\tabpy_env\Scripts\activate.bat"
+     tabpy
+     ```
+   </Aside>
+
+   {/* ![TabPy CMD](/TC26/images/3.png) */}
+
+3. **Launch Tableau Prep**
+   - Double-click `TC26_tabprep` in the Lab Files folder
+   - OR simply click the Tableau Prep logo in the taskbar
+   
+   <Aside type="caution">Make sure you are running this within the VM, not from your machine/desktop.</Aside>
+
+   {/* ![Tableau Prep](/TC26/images/4.png) */}
+
+4. **Start Tableau Prep Agent** (Connect to Tableau Cloud site)
+   - Navigate to the **Server** dropdown and click **Sign In**
+   - Select **Quick Connect Tableau Cloud**
+     - Use your email and password from step 1
+     - Site URI: `hot-1728`
+
+   {/* ![Sign In](/TC26/images/5.png) */}
+
+   <Aside type="note" title="Prep Agent">
+     You can open Agent by clicking the Astro / astronaut icon in the top right corner of Tableau Prep.
+   </Aside>
+
+   {/* ![Agent Icon](/TC26/images/12.png) */}
+   {/* ![Agent Panel](/TC26/images/13.png) */}
+
+</Steps>
+
+---
+
+Once you're connected and see the Tableau Prep canvas, you're ready to move on!

@@ -1,0 +1,89 @@
+---
+title: "Step 1: Connect, Prep & Cleanse"
+description: Connect to data, union files, and clean your dataset.
+sidebar:
+  order: 1
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+In this section we will connect to the `starter_files_sheet1` file and union it with the other files in the folder with a matching name. Then we'll build a series of data cleansing steps.
+
+<Aside type="tip">Not all cleansing steps are required to finish this section — see how many you can complete in the given time!</Aside>
+
+## 1. Connect to Data
+
+<Steps>
+
+1. Select the **Connect to Data** button and navigate to `starter_files_sheet1`
+   - OR simply drag the file from the folder onto Tableau Prep!
+   - **Lab Files → datasets → `starter_files_sheet1`**
+
+   {/* ![Connect to Data](/TC26/images/6.png) */}
+
+</Steps>
+
+## 2. Union Multiple Files
+
+<Steps>
+
+1. In the Input tool config, navigate to the 2nd tab **Tables**
+2. Select **Union Multiple files** and click **+ Add File Filters → file name**
+3. Select File name **Matches** and type `starter*` and hit enter and **Apply**
+
+   {/* ![Union Config](/TC26/images/8.png) */}
+
+</Steps>
+
+## 3. Cleanse Steps
+
+<Aside type="note" title="Use Agent!">Solve as many as possible and have fun! You can use Prep Agent to help with many of these tasks.</Aside>
+
+| # | Task | Field | Action |
+|---|------|-------|--------|
+| 3.1 | **Remove Nulls** | `prop_id` | Right-click the null value in the profile pane → **Exclude** |
+| 3.2 | **Remove Spaces** | `prop_id` | Select **Clean** → Remove All Spaces |
+| 3.3 | **Remove Duplicates** | `prop_id` | Select **Identify Duplicate Rows** → Exclude duplicates |
+| 3.4 | **Remove Characters** | `address` | Select **Clean** → Remove Punctuation |
+| 3.5 | **Split Field** | `address` | Select **Split Values** → Custom Split → All → split by `,` |
+| 3.6 | **Rename Fields** | address splits | Rename to: `street`, `city`, `state` |
+| 3.7 | **Fix Spelling** | `city` | Select **Group Values** → Spelling |
+| 3.8 | **Fix Case** | `state` | Select **Clean** → Make Uppercase |
+| 3.9 | **Group Values** | `home_type` | Select **Group Values** → Spelling |
+| 3.10 | **Remove Fields** | `note`, File paths | Click **Recommendation lightbulb** → select action |
+
+### 3.11 Update Condition Field
+
+Make the `condition` field more descriptive:
+
+**Option A — Use Agent:**
+> *Prompt the agent:* `please update the condition field to be more descriptive with text? condition 1 should be very poor and 5 should be excellent. You can fill in the rest`
+
+**Option B — Calculated Field:**
+```
+CASE [condition]
+  WHEN 1 THEN 'Poor'
+  WHEN 2 THEN 'Okay'
+  WHEN 3 THEN 'Good'
+  WHEN 4 THEN 'Very Good'
+  WHEN 5 THEN 'Excellent'
+END
+```
+
+### 3.12 Convert km to mi
+
+**Option A — Use Agent:**
+> *Prompt:* `create a new field called distance_coast_mi that converts dist_coast_km from km to mi`
+>
+> *Prompt:* `create a new field called distance_metro_mi that converts dist_metro_km from km to mi`
+
+**Option B — Calculated Fields:**
+```
+ROUND([dist_coast_km] * 0.621371, 1)
+```
+```
+ROUND([dist_metro_km] * 0.621371, 1)
+```
+
+{/* ![Cleanse Result](/TC26/images/9.png) */}
+{/* ![Cleanse Flow](/TC26/images/11.png) */}

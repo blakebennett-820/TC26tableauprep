@@ -1,0 +1,48 @@
+---
+title: "Selling Sunset: Renovate Your Data with Tableau Prep"
+description: TC26 Hands-On Training session guide
+template: splash
+hero:
+  tagline: TC26 Hands-On Training — Build a complete Tableau Prep flow from raw data to predictive output
+  actions:
+    - text: Get Started
+      link: /TC26/steps/step-0/
+      icon: right-arrow
+      variant: primary
+    - text: Download Lab Files
+      link: /TC26/downloads/
+      icon: down-caret
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## What You'll Build
+
+In this hands-on training, you'll build a complete Tableau Prep flow that takes raw San Diego real estate data and transforms it into a predictive analytics dataset — all in one connected flow.
+
+<CardGrid>
+  <Card title="Connect & Cleanse" icon="pencil">
+    Union files, remove nulls, fix spelling, and clean messy data using Tableau Prep and Prep Agent.
+  </Card>
+  <Card title="Pivot & Join" icon="random">
+    Reshape data with pivots and combine multiple data sources with joins.
+  </Card>
+  <Card title="Predict with TabPy" icon="rocket">
+    Run a Python-based predictive model directly inside your Prep flow using TabPy.
+  </Card>
+  <Card title="Spatial Analysis" icon="star">
+    Create spatial points and join them to zip code geometries for geographic analysis.
+  </Card>
+</CardGrid>
+
+## Lab Sections
+
+<CardGrid>
+  <LinkCard title="Step 0: Preliminaries" href="/TC26/steps/step-0/" description="Set up your environment and connect to Tableau Cloud." />
+  <LinkCard title="Step 1: Connect, Prep & Cleanse" href="/TC26/steps/step-1/" description="Connect to data, union files, and clean your dataset." />
+  <LinkCard title="Step 2: Pivot & Join" href="/TC26/steps/step-2/" description="Pivot columns to rows and join data sources." />
+  <LinkCard title="Step 3: Predictive (TabPy)" href="/TC26/steps/step-3/" description="Run a predictive model with TabPy." />
+  <LinkCard title="Step 4: Spatial" href="/TC26/steps/step-4/" description="Create spatial fields and perform a spatial join." />
+  <LinkCard title="Step 5: Parameter & Output" href="/TC26/steps/step-5/" description="Add parameters and output your final dataset." />
+</CardGrid>

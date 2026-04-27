@@ -1,0 +1,63 @@
+---
+title: "Step 3: Predictive (TabPy)"
+description: Set up a predictive model with the Script tool using TabPy.
+sidebar:
+  order: 3
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+In this section, we will remove unneeded fields, set up our predictive model with the Script tool, and create a variance calculation.
+
+<Aside type="note">
+  The Script tool must be configured to point to the Python file `predict_home_prices.py` located in **Lab Files → tabpy**.
+</Aside>
+
+## 1. Remove Unneeded Fields
+
+<Steps>
+
+1. Click **+** to add a **Clean** step after the previous Join step
+2. Remove unneeded fields: `Pivot1 Names`, `home_description`
+   - **Keep** the `Pivot1 Values` field and rename it to `home_description`
+
+</Steps>
+
+## 2. Predictive Model (TabPy)
+
+<Steps>
+
+1. Click **+** to add a **Script** step
+2. Configure the Script:
+   - Set Connection type to **Tableau Python (TabPy) Server**
+   - Use the **Browse** button to locate the Python model file:
+     **Lab Files → tabpy → `predict_home_prices.py`**
+   - Set the Function Name: `predict_home_prices` and wait for the new field to populate
+
+</Steps>
+
+<Aside type="tip">
+  You should be able to see the code running in your CMD terminal where TabPy is running.
+</Aside>
+
+{/* ![Script Config](/TC26/images/30.png) */}
+{/* ![Script Browse](/TC26/images/31.png) */}
+{/* ![Script Result](/TC26/images/32.png) */}
+
+## 3. Create Variance Calculation
+
+Create a new calculated field to measure the difference between actual and predicted prices.
+
+**Option A — Percentage variance:**
+```
+ROUND((([home_price_prediction] - [home_price]) / [home_price]) * 100, 1)
+```
+Name it: `price_variance_pct`
+
+**Option B — Simple price difference:**
+```
+ROUND([home_price_prediction] - [home_price], 0)
+```
+
+{/* ![Variance Calc](/TC26/images/33.png) */}
+{/* ![Variance Result](/TC26/images/34.png) */}

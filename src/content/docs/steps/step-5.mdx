@@ -1,0 +1,57 @@
+---
+title: "Step 5: Parameter & Output"
+description: Create a parameter for end users and output the final dataset.
+sidebar:
+  order: 5
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+In this section, we will create a parameter so end users can select which home types to run the prediction on. Then we'll configure the Output tool to save a Hyper file and run the flow.
+
+## 1. Remove Remaining Unneeded Fields
+
+<Steps>
+
+1. Remove any unneeded fields to simplify the dataset before output
+   - For example: `SHAPE_STLe`, `SHAPE_STAr`
+
+</Steps>
+
+## 2. Create a Parameter
+
+<Steps>
+
+1. Click the **Parameter** icon at the top of the UI (looks like sliders)
+2. Create a Parameter called `home_type` and list selectable values:
+   - `Attached`
+   - `Condo`
+   - `Single Family`
+   - `Townhome`
+
+   {/* ![Parameter Config](/TC26/images/44.png) */}
+   {/* ![Parameter UI](/TC26/images/45.png) */}
+
+3. Create a **Filter calculation** anywhere in the flow — anywhere before the Prediction step is best, such as the initial clean step!
+
+   ```
+   [home_type] = [Parameters].[home_type]
+   ```
+
+   {/* ![Parameter Filter](/TC26/images/46.png) */}
+
+</Steps>
+
+## 3. Output
+
+<Steps>
+
+1. Configure the output to **save to desktop** as a **Hyper file**
+   
+   <Aside type="tip">Notice the parameter options available in the output menu!</Aside>
+
+2. Click **Run Flow** and select your parameter option
+
+   {/* ![Output Config](/TC26/images/47.png) */}
+
+</Steps>

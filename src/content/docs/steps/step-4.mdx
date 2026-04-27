@@ -1,0 +1,55 @@
+---
+title: "Step 4: Spatial"
+description: Create spatial fields and perform a spatial join with zip code data.
+sidebar:
+  order: 4
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+In this section, we'll use the `home_lat` and `home_long` fields to create a spatial point field using the `MAKEPOINT()` function. Then we'll bring in our Zip Code spatial file and perform a spatial join.
+
+## 1. Create Spatial Point Field
+
+<Steps>
+
+1. Click **+** to add a **Clean** step after the prior Script step
+2. Click the **…** in the toolbar and select **Create Calculated Field**
+   - OR click the tool dropdown within the `home_lat` field
+3. Create a new calculated field called `home_point`:
+
+   ```
+   MAKEPOINT(home_lat, home_long)
+   ```
+
+   {/* ![Makepoint](/TC26/images/41.png) */}
+
+</Steps>
+
+## 2. Add the Zip Codes File
+
+<Steps>
+
+1. Use an **Input** to add the Zip Codes spatial file to the flow:
+   - **Lab Files → datasets → zip_codes → `ZIP_CODES.shp`**
+
+   {/* ![Zip Codes Input](/TC26/images/40.png) */}
+
+</Steps>
+
+## 3. Create a Spatial Join
+
+<Steps>
+
+1. Click **+** after either step to add a **Join**
+2. Create a **FULL OUTER** join using:
+   - `home_point` = `Geometry`
+   - The join should appear as **Intersects**
+
+</Steps>
+
+<Aside type="note">
+  A spatial join uses geometric intersection rather than exact value matching. Tableau Prep will automatically detect that these are spatial fields and configure the join as an "Intersects" operation.
+</Aside>
+
+{/* ![Spatial Join](/TC26/images/42.png) */}

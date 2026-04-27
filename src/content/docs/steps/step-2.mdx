@@ -1,0 +1,54 @@
+---
+title: "Step 2: Pivot & Join"
+description: Add a new data source, pivot fields, and join data streams.
+sidebar:
+  order: 2
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+In this section, we will add a new file (`Home_Description`), pivot the fields in that data, and then join it to the other data stream to create a single combined view.
+
+## 1. Input Home_Description & Pivot
+
+<Steps>
+
+1. **Add an Input** — connect to `Home_Description` from **Lab Files → datasets**
+2. Select **+** to insert a **Pivot** step after the input
+   - Make sure the configuration is set to **Columns to Rows**
+3. Highlight all fields and drag into the whitespace in the config menu
+   - Update the data type of the newly pivoted field (`Pivot1 Names`) to **Number**
+
+   {/* ![Pivot Config](/TC26/images/814.png) */}
+   {/* ![Pivot Fields](/TC26/images/812.png) */}
+   {/* ![Pivot Result](/TC26/images/813.png) */}
+
+</Steps>
+
+## 2. Join Data Streams
+
+<Steps>
+
+1. Select **+** after the Pivot step to insert a **Join** step
+2. Drag the last Clean step (from the other data stream) to the left side of the Join
+3. Drop it on **Add to**
+
+   {/* ![Join Setup](/TC26/images/16.png) */}
+
+</Steps>
+
+## 3. Configure Join
+
+<Steps>
+
+1. Select **Add** to create a join clause
+2. Configure an **INNER** join:
+   - `Pivot1 Names` = `home_description`
+
+</Steps>
+
+<Aside type="caution" title="Data Type Mismatch?">
+  If you encounter an error here, go back to the **Pivot** step and update the data type of the `Pivot1 Names` field to **Number**.
+</Aside>
+
+{/* ![Join Config](/TC26/images/81.png) */}

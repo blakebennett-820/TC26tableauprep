@@ -1,0 +1,48 @@
+---
+title: "Extra Credit: Analysis in Tableau Desktop"
+description: Open your output in Tableau Desktop and explore the data visually.
+sidebar:
+  order: 6
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+In this section, we'll open the dataset in Tableau Desktop for visual analysis.
+
+<Aside type="tip">
+  The best option is to delete the parameter we just created, then select **Preview in Tableau Desktop** by right-clicking the last clean step on the flow — this will allow you to see all home types. Otherwise, opening the recently created Hyper file works perfectly fine.
+</Aside>
+
+## 1. Preview in Tableau Desktop
+
+<Steps>
+
+1. Delete the parameter we just created so we can view the entire dataset
+2. Either:
+   - Re-run the output, **OR**
+   - Right-click the last clean step → select **Preview in Tableau Desktop** from the dropdown
+
+   {/* ![Preview Option](/TC26/images/60.png) */}
+   {/* ![Preview in Desktop](/TC26/images/61.png) */}
+
+</Steps>
+
+## 2. Explore in Tableau Desktop
+
+<Steps>
+
+1. **View Zip Codes** — Drag `Geometry` to the canvas
+   - Add `ZIP` to Detail on the Marks card
+
+2. **View Homes** — Drag `home_point` to the canvas
+   - Add `prop_ID` to Detail
+   - Color using `home_price` or `price_variance_pct`
+   - Add any additional attributes to the Marks card
+
+</Steps>
+
+{/* ![Final Map](/TC26/images/final-map.png) */}
+
+<Aside type="caution" title="Congratulations!">
+  You are officially a San Diego Real Estate Mogul!
+</Aside>
