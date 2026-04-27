@@ -12,14 +12,10 @@
 	--sl-color-black: #17181c;
 }
 
-.hero .hero-image {
-	min-width: 700px;
-}
-
-.hero .hero-image img {
-	border-radius: 12px;
-	width: 700px;
-	max-width: none;
+.hero img {
+	border-radius: 12px !important;
+	width: 700px !important;
+	height: auto !important;
 }
 
 :root[data-theme='light'] {
