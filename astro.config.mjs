@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
 	site: 'https://blakebennett-820.github.io',
-	base: '/TC26',
+	base: '/TC26tableauprep',
 	integrations: [
 		starlight({
 			title: 'TC26',
