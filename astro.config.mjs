@@ -58,6 +58,7 @@ export default defineConfig({
 						{ label: 'Improve Performance of Flows', link: 'https://www.tableau.com/blog/best-practices-authoring-data-preparation-flow', attrs: { target: '_blank' } },
 						{ label: 'Validate Data with Data Roles', link: 'https://help.tableau.com/current/prep/en-us/prep_validate_data.htm', attrs: { target: '_blank' } },
 						{ label: 'TabPy', link: 'https://www.tableau.com/developer/tools/python-integration-tabpy', attrs: { target: '_blank' } },
+						{ label: 'API Methods', link: 'https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api_ref_flow.htm', attrs: { target: '_blank' } },
 					],
 				},
 			],
