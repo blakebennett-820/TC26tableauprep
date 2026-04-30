@@ -32,6 +32,7 @@ export default defineConfig({
 						{ label: 'Step 3: Predictive (TabPy)', slug: 'steps/step-3' },
 						{ label: 'Step 4: Spatial', slug: 'steps/step-4' },
 						{ label: 'Step 5: Parameter & Output', slug: 'steps/step-5' },
+						{ label: 'Step 6: Publish & Schedule', slug: 'steps/step-6' },
 						{ label: 'Extra Credit: Tableau Desktop', slug: 'steps/extra-credit' },
 					],
 				},

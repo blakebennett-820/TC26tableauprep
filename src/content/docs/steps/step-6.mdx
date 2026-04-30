@@ -1,0 +1,45 @@
+---
+title: "Step 6: Publish & Schedule"
+description: Publish your flow to Tableau Cloud and explore scheduling options.
+sidebar:
+  order: 6
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+In this section, we will publish our flow to the Tableau Cloud site and explore options for scheduling, linking tasks, and general flow management.
+
+## 1. Publish Flow to Tableau Cloud
+
+<Steps>
+
+1. Navigate to the **Server** dropdown at the top of the Prep interface
+2. Make sure you are signed into the Tableau Cloud site, then select **Publish Flow**
+3. In the Tableau Server Sign In pop-up, select the **Quick Connect Tableau Cloud** option
+4. Sign in with your Tableau Cloud credentials created when registering with the HOT QR code at the beginning of this session
+5. This should open a webpage to your Cloud site with the published flow
+
+   {/* ![Publish Flow](/TC26tableauprep/images/publish-flow.png) */}
+   {/* ![Published](/TC26tableauprep/images/published.png) */}
+
+</Steps>
+
+## 2. Explore Management Options
+
+<Steps>
+
+1. Within the Tableau Cloud interface, while viewing your flow, navigate to the **Scheduled Tasks** tab
+2. Under the **New Task** button, select **Linked Task** and explore the options:
+   - Define a schedule
+   - Choose a refresh type (full or incremental, if enabled in the flow)
+   - Configure downstream flows
+   - Set up email alerts/updates upon flow runs and failures
+
+   {/* ![Schedule Options](/TC26tableauprep/images/schedule.png) */}
+   {/* ![Linked Tasks](/TC26tableauprep/images/linked-tasks.png) */}
+
+</Steps>
+
+<Aside type="caution">
+  Given that TabPy is not yet available for Tableau Cloud, this flow will fail to run for now.
+</Aside>
